@@ -4,8 +4,8 @@ use serde::{ Deserialize, Serialize };
 use thiserror::Error;
 
 #[derive(Debud, Clone, Deserialize, Serialize)]
-pub struct Stash {
-    pub stash_id: field::StashId,
+pub struct Clip {
+    pub clip_id: field::ClipId,
     pub shortcode: field::ShortCode,
     pub content: field::Content,
     pub title: field::Title,

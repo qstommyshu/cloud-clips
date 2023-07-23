@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "cloud-stash"
+name = "cloud-clip"
 version = "0.1.0"
 dependencies = [
  "serde",
