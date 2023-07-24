@@ -5,8 +5,7 @@ use derive_more::Constructor;
 pub struct Hits(u64); //u64 because number of hits can't be negative
 
 impl Hits {
-    // TODO: explain derive_more Constructor
-    // handled by Constructor trait
+    // handled by derive_more::Constructor trait, falls into tuple struct category
     // pub fn new(data: u64) -> Self {
     //     Self(data)
     // }

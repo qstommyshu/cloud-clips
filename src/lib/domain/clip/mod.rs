@@ -4,13 +4,13 @@ use serde::{ Deserialize, Serialize };
 use thiserror::Error;
 
 pub enum ClipError {
-    //TODO: explain #[error()] syntax
+    // attribute macro provided by `thiserror`, used to define a custom error msg for error
     #[error("invalid password: {0}")] InvalidPassword(String),
     #[error("invalid title: {0}")] InvalidTitle(String),
     #[error("empty content: {0}")]
     EmptyContent,
     #[error("invalid date: {0}")] InvalidDate(String),
-    //TODO: explain #[from] syntax
+    // attribute macro provided by `thiserror`, DateParse error should be automatically constructed from chrono::ParserError
     #[error("invalid password: {0}")] DateParse(#[from] chrono::ParserError),
     #[error("invalid id: {0}")] Id(#[from] uuid::Error),
     #[error("hit parse error: {0}")] Hits(#[from] std::num::TryFromIntError),
