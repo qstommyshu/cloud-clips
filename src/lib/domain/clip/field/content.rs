@@ -1,4 +1,4 @@
-use super::ClipError;
+use super::ClipError; // uses ClipError in field directory
 use serde::{ Deserialize, Serialize };
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
