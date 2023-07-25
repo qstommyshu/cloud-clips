@@ -1,3 +1,4 @@
 /target
 *.db*
 settings.json
+Cargo.lock
