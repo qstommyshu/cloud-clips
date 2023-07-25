@@ -17,11 +17,10 @@ impl Time {
         self.0.timestamp()
     }
 
-    pub from_naive_utc(datetime: NaiveDateTime) -> Self {
+    pub fn from_naive_utc(datetime: NaiveDateTime) -> Self {
         Time(DateTime::from_utc(datetime, Utc))
     }
 }
-
 
 impl FromStr for Time {
     type Err = chrono::ParseError;
@@ -29,7 +28,7 @@ impl FromStr for Time {
         // 2022-05-22 to DateTime struct
         match format!("{s}T00:00:00Z").parse::<DateTime<Utc>>() {
             Ok(time) => Ok(time.into()),
-            Err(e) => Err(e)
+            Err(e) => Err(e),
         }
     }
 }
