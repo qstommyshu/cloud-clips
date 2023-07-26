@@ -5,6 +5,7 @@ use std::str::FromStr;
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Title(Option<String>);
 
+// optional title for clips
 impl Title {
     // TODO: explain why title doesn't have error?
     pub fn new<T: Into<Option<String>>>(title: T) -> Self {
