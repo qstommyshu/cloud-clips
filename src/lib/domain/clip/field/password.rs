@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::domain::clip::ClipError;
 use serde::{ Deserialize, Serialize };
 use std::str::FromStr;
 
@@ -38,7 +38,7 @@ impl Password {
 impl Default for Password {
     fn default() -> Self {
         // default password are empty
-        self(None)
+        Self(None)
     }
 }
 

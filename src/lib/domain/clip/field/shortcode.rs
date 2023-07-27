@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::domain::clip::ClipError;
 use serde::{ Deserialize, Serialize };
 use std::str::FromStr;
 use derive_more::From;
@@ -40,7 +40,7 @@ impl Default for ShortCode {
 // TODO: what is From<ShortCode> Syntax?
 impl From<ShortCode> for String {
     fn from(shortcode: ShortCode) -> Self {
-        ShortCode.0
+        shortcode.0
     }
 }
 // get a &str from a web request, then &str.into() to get a ShortCode

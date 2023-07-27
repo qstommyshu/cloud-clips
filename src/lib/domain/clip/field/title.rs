@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::domain::clip::ClipError;
 use serde::{ Deserialize, Serialize };
 use std::str::FromStr;
 
@@ -16,15 +16,15 @@ impl Title {
             Some(title) => {
                 // have characters after trim
                 if !title.trim().is_empty() {
-                    Ok(Self(Some(title)))
+                    Self(Some(title))
                     // TODO: add title complexity rules, use ClipError
                 } else {
                     // only spaces are provided
-                    Ok(Self(None))
+                    Self(None)
                 }
             }
             // no title provided
-            None => Ok(Self(None)),
+            None => Self(None),
         }
     }
 

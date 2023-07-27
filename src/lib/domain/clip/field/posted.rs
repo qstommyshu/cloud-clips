@@ -1,5 +1,5 @@
-use crate::domain::Time;
-use super::ClipError;
+use crate::domain::time::Time;
+use crate::domain::clip::ClipError;
 use serde::{ Deserialize, Serialize };
 use derive_more::Constructor;
 

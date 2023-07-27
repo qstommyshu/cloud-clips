@@ -1,4 +1,4 @@
-use super::ClipError; // uses ClipError in field directory
+use crate::domain::clip::ClipError; // uses ClipError in field directory
 use serde::{ Deserialize, Serialize };
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -19,7 +19,7 @@ impl Content {
         self.0
     }
     // still keep a copy of self
-    pub fn as_str(&self) -> &self {
+    pub fn as_str(&self) -> &str {
         self.0.as_str()
     }
 }

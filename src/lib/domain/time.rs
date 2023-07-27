@@ -1,7 +1,7 @@
 use chrono::{ DateTime, NaiveDateTime, Utc };
 use derive_more::From;
 use serde::{ Deserialize, Serialize };
-use std::std::FromStr;
+use std::str::FromStr;
 
 // What does derive_more From does?
 #[derive(Clone, Debug, From, Deserialize, Serialize)]
