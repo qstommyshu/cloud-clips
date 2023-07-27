@@ -26,7 +26,7 @@ impl Default for DbId {
 
 impl FromStr for DbId {
     type Err = uuid::Error;
-    // uuid::Error is a enum of
+    // uuid::Error is a enum of ClipError
     fn from_str(id: &str) -> Result<Self, Self::Err> {
         Ok(DbId(Uuid::parser_str(id)?))
     }
