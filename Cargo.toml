@@ -3,6 +3,10 @@ name = "cloud-clips"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+path = "src/lib/mod.rs"
+
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
@@ -13,3 +17,4 @@ serde = { version = "1.0.174", features = ["derive"] }
 serde_json = "1.0.103"
 thiserror = "1.0.44"
 uuid = { version = "1.4.1", features = ["serde", "v4"] }
+
