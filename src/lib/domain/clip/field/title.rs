@@ -7,7 +7,7 @@ pub struct Title(Option<String>);
 
 // optional title for clips
 impl Title {
-    // TODO: explain why title doesn't have error?
+    // Title can be either None or Some title, won't create error at all
     pub fn new<T: Into<Option<String>>>(title: T) -> Self {
         // TODO: explain .into()
         let title: Option<String> = title.into();

@@ -14,7 +14,7 @@ impl Content {
         }
     }
 
-    // move self to String
+    // turn(move ownership) self to String
     pub fn into_inner(self) -> String {
         self.0
     }

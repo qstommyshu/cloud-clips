@@ -29,15 +29,14 @@ impl ShortCode {
         self.0
     }
 }
-// TODO: explain what is it for?
+// Default provides a constructor Default::default() to construct ShortCode with customized default value
 impl Default for ShortCode {
     fn default() -> Self {
         Self::new()
     }
 }
 
-// TODO: explain what is it for?
-// TODO: what is From<ShortCode> Syntax?
+// traits for ShortCode -> String
 impl From<ShortCode> for String {
     fn from(shortcode: ShortCode) -> Self {
         shortcode.0

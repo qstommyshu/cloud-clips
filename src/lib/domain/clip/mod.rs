@@ -1,4 +1,4 @@
-pub mod field;
+pub mod field; // re-export field module, each directory is a module
 
 use serde::{ Deserialize, Serialize };
 use thiserror::Error;
@@ -8,7 +8,7 @@ pub enum ClipError {
     // attribute macro provided by `thiserror`, used to define a custom error msg for error
     #[error("invalid password: {0}")] InvalidPassword(String),
     #[error("invalid title: {0}")] InvalidTitle(String),
-    // TODO: explain what {0} does?
+    // {0} takes to first argument from a tuple struct, EmptyContent is is not a tuple struct, so can't use {0}
     #[error("empty content")] EmptyContent,
     #[error("invalid date: {0}")] InvalidDate(String),
     // attribute macro provided by `thiserror`, DateParse error should be automatically constructed from chrono::ParserError

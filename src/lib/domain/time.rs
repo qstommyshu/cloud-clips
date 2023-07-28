@@ -3,7 +3,7 @@ use derive_more::From;
 use serde::{ Deserialize, Serialize };
 use std::str::FromStr;
 
-// What does derive_more From does?
+// derive From auto generate code for From(DateTime<Utc>) to Time, .into() will turn Time to DateTime<Utc>
 #[derive(Clone, Debug, From, Deserialize, Serialize)]
 // Benefit of wrapping DateTime into Time Struct: breaking update in DateTime trait will can be
 // limited to change only in Time struct we created, and we can use derive to add traits to Time.

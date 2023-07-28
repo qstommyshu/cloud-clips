@@ -1,5 +1,5 @@
 mod clip_id; // use stash_id module
-pub use clip_id::ClipId; //FIXME: export the StashId struct in stash_id module to?
+pub use clip_id::ClipId; // export the StashId struct in stash_id module to clip directory(one level outer)
 
 mod shortcode;
 pub use shortcode::ShortCode;

@@ -7,7 +7,8 @@ pub struct Password(Option<String>); // Option so password is optional
 
 impl Password {
     pub fn new<T: Into<Option<String>>>(password: T) -> Result<Self, ClipError> {
-        // TODO: explain .into()
+        // TODO: explain .into() why do we need into() here? So that we can provide str or None, not Some(str) or None?
+        // Into<Option<String>> means a type that implments Into<Option<String>>? need to check if &str is Into<Option<String>>
         let password: Option<String> = password.into();
         match password {
             // if user provide something in password field
