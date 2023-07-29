@@ -49,7 +49,7 @@ impl From<&str> for ShortCode {
     }
 }
 
-// TODO: explain why we need it? test
+// TODO: explain why we need it?
 // From Str is similar to From<&str>
 impl FromStr for ShortCode {
     type Err = ClipError;
