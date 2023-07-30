@@ -18,6 +18,8 @@ pub type Transaction<'t> = sqlx::Transaction<'t, Sqlite>;
 pub type AppDatabaseRow = sqlx::sqlite::SqliteRow;
 pub type AppQueryResult = sqlx::sqlite::SqliteQueryResult;
 
+// A struct of an sqlx pool
+// Database struct is publiv, but sqlx::Pool<D> is private
 pub struct Database<D: sqlx::Database>(sqlx::Pool<D>);
 
 impl Database<Sqlite> {
@@ -34,6 +36,11 @@ impl Database<Sqlite> {
                 panic!("database connection error");
             }
         }
+    }
+
+    // to get the private pool
+    pub fn get_pool(&self) -> &DatabasePool {
+        &self.0
     }
 }
 
