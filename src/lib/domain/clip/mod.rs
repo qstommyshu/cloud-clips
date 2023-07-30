@@ -4,6 +4,8 @@ use serde::{ Deserialize, Serialize };
 use thiserror::Error;
 
 #[derive(Debug, Error)]
+// much easier to work with our own data enumeration instead of raw Error types: e.g. chrono::ParseError, uuid::Error, etc.
+// when packages update in the future, we can just make change within our own struct
 pub enum ClipError {
     // attribute macro provided by `thiserror`, used to define a custom error msg for error
     #[error("invalid password: {0}")] InvalidPassword(String),
